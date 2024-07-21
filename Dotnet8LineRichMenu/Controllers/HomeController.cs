@@ -18,6 +18,36 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Bank()
+    {
+        return View();
+    }
+
+    public IActionResult News()
+    {
+        return View();
+    }
+
+    public IActionResult Marketing()
+    {
+        return View();
+    }
+
+    public IActionResult SocialMedia()
+    {
+        return View();
+    }
+
+    public IActionResult SocialMediaUrl()
+    {
+        return View();
+    }
+    
+    public IActionResult Markdown()
+    {
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
