@@ -14,10 +14,10 @@ public class ChatCompletionRequest
     public List<MessageDto> Messages { get; set; }
 
     [JsonPropertyName("max_tokens")]
-    public int? MaxTokens { get; set; }
+    public int? MaxTokens { get; set; } = 2000;
 
     [JsonPropertyName("temperature")]
-    public double? Temperature { get; set; } = 0.2;
+    public double? Temperature { get; set; } = 1;
 
     [JsonPropertyName("top_p")]
     public double? TopP { get; set; } = 0.9;
