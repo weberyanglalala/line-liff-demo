@@ -1,5 +1,6 @@
 using Dotnet8LineRichMenu.Models.Api.Perplexity;
 using Dotnet8LineRichMenu.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dotnet8LineRichMenu.WebApi;
@@ -23,12 +24,19 @@ public class PerplexityController : ControllerBase
         try
         {
             var chatResponse = await _perplexityService.GetChatCompletion(request.Prompt);
-            return Ok(chatResponse);
+            var assistantResponse = chatResponse.Choices.FirstOrDefault(x => x.FinishReason == "stop");
+            return Ok(new GetChatCompletionResponse()
+            {
+                Output = assistantResponse?.Message.Content
+            });
         }
         catch (Exception e)
         {
             _logger.LogError(e, "Error occurred while getting chat completion");
-            throw;
+            return Ok(new GetChatCompletionResponse()
+            {
+                Output = "API Error occurred while getting chat completion!"
+            });
         }
     }
 }
