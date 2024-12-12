@@ -32,7 +32,8 @@ public class MessagesController : LineWebHookControllerBase
             foreach (var lineEvent in ReceivedMessage.events)
             {
                 DisplayLoadingAnimation(lineEvent.source.userId, 10);
-                var responseMsg = "BS Line Messaging API DEMO";
+                var responseMsg = "BS Line Messaging API DEMO / bs2024summer@build-school.com";
+                SetupRichMenu();
                 //回覆訊息
                 ReplyMessage(lineEvent.replyToken, responseMsg);
             }
@@ -77,7 +78,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "Social Media",
-                    uri = new Uri($"{_domain}/Home/SocialMedia")
+                    uri = new Uri("https://comfyui-vue-frontend.vercel.app/comfyui/furnituredesign")
                 }
             },
             new isRock.LineBot.RichMenu.Area
@@ -86,7 +87,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "Social Media UrL",
-                    uri = new Uri($"{_domain}/Home/SocialMediaUrl")
+                    uri = new Uri("https://comfyui-vue-frontend.vercel.app/comfyui/stylechange")
                 }
             },
             new isRock.LineBot.RichMenu.Area
@@ -95,7 +96,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "Markdown",
-                    uri = new Uri($"{_domain}/Home/Markdown")
+                    uri = new Uri("https://comfyui-vue-frontend.vercel.app/comfyui/characterchange")
                 }
             },
             new isRock.LineBot.RichMenu.Area
@@ -104,7 +105,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "Marketing",
-                    uri = new Uri($"{_domain}/Home/Marketing")
+                    uri = new Uri($"https://comfyui-vue-frontend.vercel.app/comfyui/travelproduct")
                 }
             },
             new isRock.LineBot.RichMenu.Area
@@ -113,7 +114,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "News",
-                    uri = new Uri($"{_domain}/Home/News")
+                    uri = new Uri("https://comfyui-vue-frontend.vercel.app/comfyui/travelproduct")
                 }
             },
             new isRock.LineBot.RichMenu.Area
@@ -122,7 +123,7 @@ public class MessagesController : LineWebHookControllerBase
                 action = new isRock.LineBot.UriAction()
                 {
                     label = "王道銀行小幫手",
-                    uri = new Uri($"{_domain}/Home/Bank")
+                    uri = new Uri("https://comfyui-vue-frontend.vercel.app/comfyui/travelproduct")
                 }
             }
         };
